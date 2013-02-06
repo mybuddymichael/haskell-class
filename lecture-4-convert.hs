@@ -8,6 +8,7 @@ convert (x,y)
     | y == "gal" = (x / gallonsPerLiter, "L")
     | y == "kg"  = (x * poundsPerKilogram, "lb")
     | y == "lb"  = (x / poundsPerKilogram, "kg")
+    | otherwise  = error ("I don't know the unit " ++ (show y))
   where
     yardsPerMeter = 1.09361
     gallonsPerLiter = 0.264172
