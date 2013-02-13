@@ -13,7 +13,7 @@ sumOfTree = sumOfNode . Just . root
 
 sumOfNode :: Maybe Node -> Int
 sumOfNode Nothing = 0
-sumOfNode (Just n) = sum [value n, leftSum n, rightSum n]
-  where
-    leftSum  = sumOfNode . left
-    rightSum = sumOfNode . right
+sumOfNode (Just n) = sum [ value n
+                         , sumOfNode $ left n
+                         , sumOfNode $ right n
+                         ]
