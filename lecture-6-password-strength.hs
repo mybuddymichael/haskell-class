@@ -3,7 +3,7 @@
 import Data.Char
 
 passwordIsStrong :: String -> Bool
-passwordIsStrong s = all (== True) [ length s >= 15
-                                   , any isUpper s
-                                   , any isDigit s
-                                   ]
+passwordIsStrong s = and [ length s >= 15
+                         , any isUpper s
+                         , any isDigit s
+                         ]
